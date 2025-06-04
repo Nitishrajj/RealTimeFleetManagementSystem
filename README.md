@@ -44,7 +44,56 @@ This project simulates a fleet of delivery trucks and tracks their real-time loc
 
 ## 📐 Architecture
 
-![Architecture Diagram](./A_diagram_of_a_Real-Time_Fleet_Management_System_i.png)
+Architecture Diagram
+
+
+
+                               +----------------+
+                               |   Admin Panel  |
+                               | (Postman / UI) |
+                               +--------+-------+
+                                        |
+                      CRUD Truck Info   |  (REST API)
+                                        v
+                            +-----------+------------+
+                            |       Admin Service     |
+                            | (Spring Boot + MongoDB) |
+                            +-----------+------------+
+                                        |
+                                        | Truck Info Stored
+                                        v
+                                  +-----+------+
+                                  |  MongoDB   |
+                                  +------------+
+
+--------------------------------------------------------------------------------
+
+                     Simulate Location                Consume & Store
+                  +--------------------+           +--------------------+
+                  | Location Simulator |           | Location Ingestor  |
+                  | (Kafka Producer)   |---------> | (Kafka Consumer)   |
+                  +--------------------+           +--------------------+
+                           |                                |
+                           | GPS Data                       | Save latest location
+                           v                                v
+                     +----------------+             +---------------+
+                     | Kafka Topic:   |             |   Redis       |
+                     | truck-location |             | (Cache Layer) |
+                     +----------------+             +---------------+
+                                                        |
+                                                Retrieve location
+                                                        v
+                                                +---------------+
+                                                |   Frontend /  |
+                                                |   Customer UI |
+                                                +---------------+
+
+
+
+
+
+
+
 
 ---
 
