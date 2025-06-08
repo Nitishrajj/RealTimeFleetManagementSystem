@@ -180,6 +180,127 @@ Example: Every few seconds, a truck sends its latitude, longitude, and timestamp
 
 
 
+
+##API ENDPOINTS WITH REQUEST AND RESPONSE MODELS 
+
+### 1. 🚛 Register a new Truck
+Method: POST
+
+Endpoint: /admin/truck
+
+Request Body (JSON):
+
+JSON BODY 
+
+{
+  "truckNumber": "KA01AB1234",
+  "driverName": "John Doe",
+  "driverContact": "9876543210",
+  "truckType": "12-wheeler",
+  "capacity": 10000
+}
+Model Class: TruckRequestDTO
+
+Response (201 Created):
+
+JSON
+
+{
+  "id": 1,
+  "message": "Truck registered successfully"
+}
+Model Class: TruckResponseDTO
+
+### 2. 📋 List all Trucks
+Method: GET
+
+Endpoint: /admin/trucks
+
+Response (200 OK):
+
+JSON
+
+[
+  {
+    "id": 1,
+    "truckNumber": "KA01AB1234",
+    "driverName": "John Doe",
+    "truckType": "12-wheeler",
+    "capacity": 10000
+  },
+  {
+    "id": 2,
+    "truckNumber": "TN02CD5678",
+    "driverName": "Jane Smith",
+    "truckType": "6-wheeler",
+    "capacity": 5000
+  }
+]
+Model Class: List<TruckResponseDTO>
+
+### 3. 🔍 Get Truck Details by ID
+Method: GET
+
+Endpoint: /admin/truck/{id}
+
+Response (200 OK):
+
+JSON
+
+{
+  "id": 1,
+  "truckNumber": "KA01AB1234",
+  "driverName": "John Doe",
+  "truckType": "12-wheeler",
+  "capacity": 10000
+}
+Model Class: TruckResponseDTO
+
+### 4. ✏️ Update Truck Info
+Method: PUT
+
+Endpoint: /admin/truck/{id}
+
+Request Body (JSON):
+
+
+{
+  "truckNumber": "KA01AB9999",
+  "driverName": "John D",
+  "driverContact": "9876540000",
+  "truckType": "10-wheeler",
+  "capacity": 9500
+}
+Model Class: TruckRequestDTO
+
+Response (200 OK):
+
+JSON
+
+{
+  "id": 1,
+  "message": "Truck updated successfully"
+}
+Model Class: TruckResponseDTO
+
+### 5. ❌ Delete a Truck
+Method: DELETE
+
+Endpoint: /admin/truck/{id}
+
+Response (200 OK):
+
+JSON
+
+{
+  "message": "Truck deleted successfully"
+}
+Model Class: GenericResponseDTO (just a wrapper for messages)
+
+
+
+
+
 ### ROUGH - WORK
 
 Final Checklist: Required Installations for Our Project
