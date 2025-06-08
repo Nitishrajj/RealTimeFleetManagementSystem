@@ -181,9 +181,9 @@ Example: Every few seconds, a truck sends its latitude, longitude, and timestamp
 
 
 
-##API ENDPOINTS WITH REQUEST AND RESPONSE MODELS 
+### API ENDPOINTS WITH REQUEST AND RESPONSE MODELS 
 
-### 1. 🚛 Register a new Truck
+## 1. 🚛 Register a new Truck
 Method: POST
 
 Endpoint: /admin/truck
@@ -229,7 +229,7 @@ JSON
 Model Class: TruckResponseDTO
 
 
-### 2. 📋 List all Trucks
+## 2. 📋 List all Trucks
 Method: GET
 
 Endpoint: /admin/trucks
@@ -273,7 +273,7 @@ Model Class: List<TruckResponseDTO>
 
 
 
-### 3. 🔍 Get Truck Details by ID
+## 3. 🔍 Get Truck Details by ID
 
 Method: GET
 
@@ -309,7 +309,7 @@ Model Class: TruckResponseDTO
 
 
 
-### 4. ✏️ Update Truck Info
+## 4. ✏️ Update Truck Info
 
 Method: PUT
 
@@ -363,7 +363,7 @@ Model Class: TruckResponseDTO
 
 
 
-### 5. ❌ Delete a Truck
+## 5. ❌ Delete a Truck
 
 Method: DELETE
 
@@ -393,7 +393,7 @@ Model Class: GenericResponseDTO (just a wrapper for messages)
 
 
 
-### ROUGH - WORK
+## ROUGH - WORK
 
 Final Checklist: Required Installations for Our Project
 Tool	Purpose	Installed?
