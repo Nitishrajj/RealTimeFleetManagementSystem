@@ -241,30 +241,29 @@ JSON
 [
 
   {
+     "id": 1,
 
-    "id": 1,
+  "truckNumber": "KA01AB1234",
 
-    "truckNumber": "KA01AB1234",
+  "driverName": "John Doe",
 
-    "driverName": "John Doe",
+   "truckType": "12-wheeler",
 
-    "truckType": "12-wheeler",
-
-    "capacity": 10000
+   "capacity": 10000
 
   },
 
   {
 
-    "id": 2,
+  "id": 2,
 
-    "truckNumber": "TN02CD5678",
+   "truckNumber": "TN02CD5678",
 
-    "driverName": "Jane Smith",
+   "driverName": "Jane Smith",
 
-    "truckType": "6-wheeler",
+   "truckType": "6-wheeler",
 
-    "capacity": 5000
+  "capacity": 5000
 
   }
 
