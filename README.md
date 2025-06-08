@@ -180,7 +180,34 @@ Example: Every few seconds, a truck sends its latitude, longitude, and timestamp
 
 
 
+### ROUGH - WORK
 
+Final Checklist: Required Installations for Our Project
+Tool	Purpose	Installed?
+ Java 17	Core backend language	
+ Spring Tool Suite (STS)	IDE for Spring Boot	
+ Maven	Build tool and dependency manager	
+ MongoDB (Docker)	Database for storing truck/admin/location data	✔️ Running via Docker
+ Docker	Containerization (Mongo, Redis, future use)	
+ Homebrew	macOS package manager	
+ mongosh	CLI for MongoDB debugging/inspection	
+ Postman	(Optional) For API testing	
+ Redis (Later)	In-memory cache for real-time location	
+ Kafka (Later)	Streaming system for location updates	
+ AWS CLI / SQS (Optional)	Optional, for demonstrating queue integration	
+
+
+
+com.fleetmanagement.adminservice
+│
+├── controller       → For REST controllers (expose endpoints)
+├── service          → For business logic
+│   └── impl         → Concrete implementations
+├── repository       → For DAO layer (interfaces extending JpaRepository)
+├── entity           → For JPA Entity classes
+├── dto              → (Optional) For request/response payload objects
+├── config           → For configuration files (e.g., Swagger, DB, security)
+└── exception        → For custom exceptions, handlers
 
 
 
@@ -220,21 +247,3 @@ mvn spring-boot:run
 # Run Ingestor Service
 cd location-ingestor
 mvn spring-boot:run
-
-
-
-### ROUGH - WORK
-
-Final Checklist: Required Installations for Our Project
-Tool	Purpose	Installed?
- Java 17	Core backend language	
- Spring Tool Suite (STS)	IDE for Spring Boot	
- Maven	Build tool and dependency manager	
- MongoDB (Docker)	Database for storing truck/admin/location data	✔️ Running via Docker
- Docker	Containerization (Mongo, Redis, future use)	
- Homebrew	macOS package manager	
- mongosh	CLI for MongoDB debugging/inspection	
- Postman	(Optional) For API testing	
- Redis (Later)	In-memory cache for real-time location	
- Kafka (Later)	Streaming system for location updates	
- AWS CLI / SQS (Optional)	Optional, for demonstrating queue integration	
