@@ -198,15 +198,25 @@ Tool	Purpose	Installed?
 
 
 
+
 com.fleetmanagement.adminservice
+
 │
+
 ├── controller       → For REST controllers (expose endpoints)
+
 ├── service          → For business logic
+
 │   └── impl         → Concrete implementations
+
 ├── repository       → For DAO layer (interfaces extending JpaRepository)
+
 ├── entity           → For JPA Entity classes
+
 ├── dto              → (Optional) For request/response payload objects
+
 ├── config           → For configuration files (e.g., Swagger, DB, security)
+
 └── exception        → For custom exceptions, handlers
 
 
