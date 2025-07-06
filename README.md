@@ -347,6 +347,13 @@ Response (200 OK):
 
 
 
+
+
+
+
+
+
+
 JSON
 
 
@@ -445,6 +452,26 @@ com.fleetmanagement.adminservice
 - Kafka + Zookeeper (local or cloud)
 - Redis
 - MongoDB
+
+
+
+
+Example data flow of LOCATION INGESTOR SERVICE 
+
+Truck Device (or Simulator)
+     ↓
+Kafka Producer → [ truck-location topic ]
+     ↓
+Location Ingestor (Kafka Consumer)
+     ↙                        ↘
+Redis (live data)     MongoDB (historical points)
+     ↓                        ↓
+API Response          API Response
+
+
+
+
+
 
 ### Steps
 
